@@ -17,4 +17,8 @@ public interface GigRepository {
     boolean existsBySlug(String slug);
 
     List<Gig> searchActiveGigs(String keyword, String category);
+
+    default List<Gig> search(String keyword, String category) {
+        return searchActiveGigs(keyword, category);
+    }
 }
