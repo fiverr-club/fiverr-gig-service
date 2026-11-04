@@ -52,7 +52,7 @@ public class GigController {
         return ResponseEntity.ok(GigRestMapper.toResponse(result));
     }
 
-    @GetMapping("/search")
+    @GetMapping({"", "/search"})
     public ResponseEntity<List<GigResponse>> searchGigs(
             @RequestParam(required = false, defaultValue = "") String keyword,
             @RequestParam(required = false, defaultValue = "") String category
